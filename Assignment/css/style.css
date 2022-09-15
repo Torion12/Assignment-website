@@ -1,0 +1,167 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  --color-primary:#2B6B97;
+  --color-secondary:#FF7437;
+  --color-white:#FFFFFF;
+  --color-black:#000;
+  --color-accent:#313131;
+
+  --font-primary:'Roboto', sans-serif;
+  --font-text:'Montserrat', sans-serif;;
+  --font-logo:'Montserrat', sans-serif;
+  --font-heading:var(--font-primary);
+  --font-body:var(--font-text);
+  --font-image:var(--font-logo);
+
+  --weight-extralight:300;
+  --weight-regular:400;
+  --weight-bold:700;
+
+}
+
+/* Remove default margin */
+* {
+  margin: 0px;
+  padding: 0px;
+  font: inherit;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+li[role='list'] {
+  list-style: none;
+  display: inline;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+html, body{
+    height: 100%;
+}
+
+
+/* Set core body defaults */
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.space-between{
+    justify-content: space-between;
+}
+.align-center{
+    align-items: center;
+}
+.flex  {
+    display: flex;
+}
+
+.container{
+    width: 90%;
+    max-width: 1140px;
+    margin-inline: auto;
+}
+
+/*****typograpy****/
+
+
+
+/***header style****/
+
+.menu .menu-item {
+    padding: 14px 20px 14px 20px;
+    font-family:var(--font-body);
+    font-weight: var(--weight-regular);
+    text-transform: uppercase;
+}
+.menu .menu-item > a{
+    font-size: 14px;
+
+}
+
+/***logo****/
+
+.logo{
+    gap: 4px;
+}
+.logo-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+/***logo END style****/
+
+/***Hamburger style****/
+.hamburger{
+    display: none;
+    
+}
+
+.hamburger .bar{
+    width: 30px;
+    height: 4px;
+    background-color: var(--color-primary);
+    margin-bottom:4px ;
+}
+
+/***Hamburger END style****/
+
+@media screen and (max-width: 1204px) {
+     .menu {
+        display: none;
+    }
+
+    .hamburger{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .hamburger.active .bar:nth-child(2){
+        opacity: 0;
+    }
+    
+    .hamburger.active .bar:first-child{
+        transform: translateY(8px) rotate(45deg);
+    }
+    
+    .hamburger.active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+       
+    }
+
+}
